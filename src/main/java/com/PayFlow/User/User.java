@@ -13,9 +13,9 @@ import lombok.NoArgsConstructor;
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long  Id;
-    private String Name;
-    private String Email;
-    private String Password;
+    private Long  id;
+    private String name;
+    private String email;
+    private String password;
 
 }
