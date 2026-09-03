@@ -1,4 +1,4 @@
-package com.PayFlow.User;
+package com.PayFlow.Entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class userEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long  id;
