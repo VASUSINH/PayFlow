@@ -27,6 +27,8 @@ public class userService {
 
         user savedUser = userRepository.save(obj);
 
+        // Below Code generates addUserResponseDTO object
+
         return new addUserResponseDTO(
                 savedUser.getId(),
                 savedUser.getName(),
