@@ -2,16 +2,20 @@ package com.PayFlow.Mapper;
 
 import com.PayFlow.DTO.addUserRequestDTO;
 import com.PayFlow.DTO.addUserResponseDTO;
-import com.PayFlow.Entity.user;
-import org.apache.catalina.User;
+import com.PayFlow.Entity.userEntity;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
 public class userMapper {
-        //This Function converts DTO Request object to Entity Object.
-        public user toEntity(addUserRequestDTO userRequest) {
 
-            user user = new user();
+        //This Function converts DTO Request object to Entity Object.
+        public userEntity toEntity(addUserRequestDTO userRequest) {
+
+
+
+            userEntity user = new userEntity();
 
             user.setName(userRequest.getName());
             user.setEmail(userRequest.getEmail());
@@ -20,7 +24,7 @@ public class userMapper {
             return user;
         }
        //This function converts Entity object to DTO Response Object.
-        public addUserResponseDTO toResponse(user user) {
+        public addUserResponseDTO toResponse(userEntity user) {
 
             return new addUserResponseDTO(
                     user.getId(),
