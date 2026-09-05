@@ -3,6 +3,7 @@ package com.PayFlow.Service;
 import com.PayFlow.DTO.addUserRequestDTO;
 import com.PayFlow.DTO.addUserResponseDTO;
 import com.PayFlow.Entity.user;
+import com.PayFlow.Mapper.userMapper;
 import com.PayFlow.Repository.userRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,26 +15,16 @@ public class userService {
     @Autowired
     private userRepository userRepository;
 
-    public addUserResponseDTO createUser(addUserRequestDTO request){
+    @Autowired
+    private userMapper userMapper;
 
-        //As per now Manually Converting RequestDTO object to Entity Object
-        //Later Mapper libraries will be used
+    public addUserResponseDTO createUser(addUserRequestDTO userRequest) {
 
-        user obj = new user();
+        user user = userMapper.toEntity(userRequest);
 
-        obj.setName(request.getName());
-        obj.setEmail(request.getEmail());
-        obj.setPassword(request.getPassword());
+        user savedUser = userRepository.save(user);
 
-        user savedUser = userRepository.save(obj);
-
-        // Below Code generates addUserResponseDTO object
-
-        return new addUserResponseDTO(
-                savedUser.getId(),
-                savedUser.getName(),
-                savedUser.getEmail()
-        );
+        return userMapper.toResponse(savedUser);
     }
 
 }
