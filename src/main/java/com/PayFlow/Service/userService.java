@@ -2,6 +2,7 @@ package com.PayFlow.Service;
 
 import com.PayFlow.DTO.addUserRequestDTO;
 import com.PayFlow.DTO.addUserResponseDTO;
+import com.PayFlow.DTO.loginRequestDTO;
 import com.PayFlow.Entity.userEntity;
 import com.PayFlow.Mapper.userMapper;
 import com.PayFlow.Repository.userRepository;
@@ -33,6 +34,22 @@ public class userService {
         userEntity savedUser = userRepository.save(user);
 
         return userMapper.toResponse(savedUser);
+    }
+    public addUserResponseDTO login(loginRequestDTO loginRequest) {
+
+        userEntity user = userRepository.findByEmail(loginRequest.getEmail())
+                .orElseThrow(() -> new RuntimeException("Invalid email or password"));
+
+        boolean passwordMatches = passwordEncoder.matches(
+                loginRequest.getPassword(),
+                user.getPassword()
+        );
+
+        if (!passwordMatches) {
+            throw new RuntimeException("Invalid email or password");
+        }
+
+        return userMapper.toResponse(user);
     }
 
 }

@@ -2,6 +2,7 @@ package com.PayFlow.Controller;
 
 import com.PayFlow.DTO.addUserRequestDTO;
 import com.PayFlow.DTO.addUserResponseDTO;
+import com.PayFlow.DTO.loginRequestDTO;
 import com.PayFlow.Service.userService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,11 @@ public class userController {
     public addUserResponseDTO createUser(@Valid @RequestBody addUserRequestDTO add_userdto){
 
         return userService.createUser(add_userdto);
+    }
+    @PostMapping("api/login")
+    public addUserResponseDTO login(@RequestBody loginRequestDTO loginRequest) {
+
+        return userService.login(loginRequest);
     }
 
 }
