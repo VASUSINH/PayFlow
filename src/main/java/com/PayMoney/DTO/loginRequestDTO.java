@@ -1,4 +1,4 @@
-package com.PayFlow.DTO;
+package com.PayMoney.DTO;
 
 import lombok.Data;
 

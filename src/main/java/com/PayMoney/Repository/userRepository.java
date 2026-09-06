@@ -1,6 +1,6 @@
-package com.PayFlow.Repository;
+package com.PayMoney.Repository;
 
-import com.PayFlow.Entity.userEntity;
+import com.PayMoney.Entity.userEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

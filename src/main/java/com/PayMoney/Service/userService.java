@@ -1,11 +1,11 @@
-package com.PayFlow.Service;
+package com.PayMoney.Service;
 
-import com.PayFlow.DTO.addUserRequestDTO;
-import com.PayFlow.DTO.addUserResponseDTO;
-import com.PayFlow.DTO.loginRequestDTO;
-import com.PayFlow.Entity.userEntity;
-import com.PayFlow.Mapper.userMapper;
-import com.PayFlow.Repository.userRepository;
+import com.PayMoney.DTO.addUserRequestDTO;
+import com.PayMoney.DTO.addUserResponseDTO;
+import com.PayMoney.DTO.loginRequestDTO;
+import com.PayMoney.Entity.userEntity;
+import com.PayMoney.Mapper.userMapper;
+import com.PayMoney.Repository.userRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;

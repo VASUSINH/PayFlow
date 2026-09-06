@@ -1,4 +1,4 @@
-package com.PayFlow.Exception;
+package com.PayMoney.Exception;
 
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;

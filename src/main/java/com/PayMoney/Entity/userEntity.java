@@ -1,4 +1,4 @@
-package com.PayFlow.Entity;
+package com.PayMoney.Entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,18 +1,17 @@
-package com.PayFlow.Controller;
+package com.PayMoney.Controller;
 
-import com.PayFlow.DTO.addUserRequestDTO;
-import com.PayFlow.DTO.addUserResponseDTO;
-import com.PayFlow.DTO.loginRequestDTO;
-import com.PayFlow.Service.userService;
+import com.PayMoney.DTO.addUserRequestDTO;
+import com.PayMoney.DTO.addUserResponseDTO;
+import com.PayMoney.DTO.loginRequestDTO;
+import com.PayMoney.Service.userService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class userController {
+public class  userController {
 
      @Autowired
      private userService userService;
